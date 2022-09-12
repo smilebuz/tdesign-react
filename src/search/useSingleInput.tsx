@@ -8,7 +8,7 @@ import { TdSearchProps } from './type';
 // import useConfig from '../hooks/useConfig';
 import useControlled from '../hooks/useControlled';
 
-const PROPERTIES = ['clearable', 'disabled', 'label', 'placeholder', 'readonly', 'suffix', 'suffixIcon', 'onEnter'];
+const PROPERTIES = ['clearable', 'disabled', 'label', 'placeholder', 'readonly', 'suffix', 'onEnter'];
 
 export default function useSingleInput(props: TdSearchProps) {
   // const {} = props;
@@ -35,39 +35,36 @@ export default function useSingleInput(props: TdSearchProps) {
     setInputValue(value, { ...context, trigger: 'input-change' });
   };
 
-  const renderSingleInput = () => 
+  const renderSingleInput = () => (
     // TODO onEnter触发onSearch
-     (
-      <Input
-        ref={inputRef}
-        {...commonInputProps}
-        value={inputValue}
-        autoWidth={props.autoWidth}
-        onChange={onInnerInputChange}
-        onClear={onInnerClear}
-        onEnter={(val: string, context) => {
-          props.onEnter?.({
-            ...context,
-            value: val,
-          });
-        }}
-        onFocus={(val, context) => {
-          props.onFocus?.({
-            ...context,
-            value: val,
-          });
-        }}
-        onBlur={(val, context) => {
-          props.onBlur?.({
-            ...context,
-            value: val,
-          });
-        }}
-        inputClass={classNames(props.inputProps?.className)}
-      />
-    )
-  ;
-
+    <Input
+      ref={inputRef}
+      {...commonInputProps}
+      value={inputValue}
+      autoWidth={props.autoWidth}
+      onChange={onInnerInputChange}
+      onClear={onInnerClear}
+      onEnter={(val: string, context) => {
+        props.onEnter?.({
+          ...context,
+          value: val,
+        });
+      }}
+      onFocus={(val, context) => {
+        props.onFocus?.({
+          ...context,
+          value: val,
+        });
+      }}
+      onBlur={(val, context) => {
+        props.onBlur?.({
+          ...context,
+          value: val,
+        });
+      }}
+      inputClass={classNames(props.inputProps?.className)}
+    />
+  );
   return {
     inputRef,
     commonInputProps,

@@ -7,7 +7,7 @@ import { TdSearchProps } from './type';
 export const searchDefaultProps: TdSearchProps = {
   autofocus: false,
   autoWidth: false,
-  borderless: true,
+  borderless: false,
   clearable: true,
   multiline: false,
   readonly: false,

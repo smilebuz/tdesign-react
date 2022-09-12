@@ -5,6 +5,7 @@ export interface SearchCommonProperties {
   disabled?: TdSearchProps['disabled'];
   label?: TdSearchProps['label'];
   placeholder?: TdSearchProps['placeholder'];
+  prefixIcon?: TdSearchProps['prefixIcon'];
   readonly?: TdSearchProps['readonly'];
   suffix?: TdSearchProps['suffix'];
   suffixIcon?: TdSearchProps['suffixIcon'];
@@ -16,6 +17,7 @@ export enum SearchCommonPropertiesEnum {
   'disabled',
   'label',
   'placeholder',
+  'prefixIcon',
   'readonly',
   'suffix',
   'suffixIcon',
